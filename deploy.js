@@ -18,7 +18,7 @@ const deploy = async () => {
 
 	const result = await new web3.eth.Contract(JSON.parse(interface))
 	//deployed contract addresses must have 0x in front of the bytecode
-	.deploy({ data: '0x' + bytecode, arguments: ['Hi there!'] })
+	.deploy({ data: '0x' + bytecode })
 	.send({ gas: '1000000', from: accounts[0] });
 
 	console.log('Contract deployed to ', result.options.address);
